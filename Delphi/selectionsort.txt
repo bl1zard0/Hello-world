@@ -1,0 +1,16 @@
+// indexing 0
+procedure selection_sort(var list: array of integer);
+var i, j, min, temp: integer;
+begin
+  for i:=0 to (length(list) - 2) do begin
+    min:=length(list) - 1;
+    // finding minimum
+    for j:=i to (length(list) - 1) do
+      if (list[min] > list[j]) then
+        min:=j;
+    // changing
+    temp:=list[min];
+    list[min]:=list[i];
+    list[i]:=temp;
+  end;
+end;
